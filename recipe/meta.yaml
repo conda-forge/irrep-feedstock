@@ -1,5 +1,5 @@
 {% set name = "irrep" %}
-{% set version = "1.9.3" %}
+{% set version = "1.10.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/irrep-{{ version }}.tar.gz
-  sha256: 0453b0278f6a6bded3e53f8493f7161086027ae7fc85ebc04cc9732085583e48
+  sha256: 2ca3b152abde7bc7d013cbc544994377683ddff61b2b05076ff0ff4525323df0
 
 build:
   entry_points:
@@ -21,6 +21,7 @@ requirements:
     - python >=3.6
     - pip
   run:
+    - h5py
     - packaging
     - python >=3.6
     - numpy
@@ -30,7 +31,7 @@ requirements:
     - click
     - monty
     - ruamel.yaml
-    - irreptables
+    - irreptables >=1.1.0
     - fortio
 
 test:
