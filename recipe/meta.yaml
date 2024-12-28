@@ -14,17 +14,17 @@ build:
     - irrep = irrep.cli:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
     - h5py
     - packaging
-    - python >=3.6
+    - python >={{ python_min }}
     - numpy
     - scipy >=1.0
     - spglib >=1.14
@@ -43,6 +43,7 @@ test:
     - irrep --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/stepan-tsirkin/irrep
