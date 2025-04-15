@@ -1,5 +1,5 @@
 {% set name = "irrep" %}
-{% set version = "2.0.0" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/irrep-{{ version }}.tar.gz
-  sha256: 40e8486334ce348dcf09c4b1b5d35e9707c649770d2e18927d77cdcbaab6af7f
+  sha256: 3993046f1aad4a5260d50d2d31af7de2e90ac327b9a4380da7834e8bd9fc2bf2
 
 build:
   entry_points:
@@ -27,7 +27,7 @@ requirements:
     - python >={{ python_min }}
     - numpy
     - scipy >=1.0
-    - spglib >=1.14
+    - spglib >=2.5.0
     - lazy-property
     - click
     - monty
