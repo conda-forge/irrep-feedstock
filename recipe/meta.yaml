@@ -1,5 +1,5 @@
 {% set name = "irrep" %}
-{% set version = "2.5.0" %}
+{% set version = "2.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/irrep-{{ version }}.tar.gz
-  sha256: a1afc05d62ca65865fd3fc885742646ba81491de24229689112955f03024286a
+  sha256: 93ebbaf1c9b59da114ce6f92afce74b99152fa92982aa668c8ffbb6b3d6a0ddc
 
 build:
   entry_points:
@@ -22,6 +22,7 @@ requirements:
     - pip
     - setuptools
   run:
+    - pyxtal ==1.1.1
     - h5py
     - packaging
     - python >={{ python_min }}
