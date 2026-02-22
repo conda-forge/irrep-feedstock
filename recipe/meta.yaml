@@ -1,5 +1,5 @@
 {% set name = "irrep" %}
-{% set version = "2.6.0" %}
+{% set version = "2.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/irrep-{{ version }}.tar.gz
-  sha256: 93ebbaf1c9b59da114ce6f92afce74b99152fa92982aa668c8ffbb6b3d6a0ddc
+  sha256: 55cbd5adbfe2efeafe3899c50ae981d7bf2e9e5f270b414d4921c391c74d9b33
 
 build:
   entry_points:
