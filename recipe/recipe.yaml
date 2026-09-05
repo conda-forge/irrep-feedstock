@@ -1,0 +1,65 @@
+schema_version: 1
+
+context:
+  name: irrep
+  version: "3.2.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/irrep-${{ version }}.tar.gz
+  sha256: f80919c756d958aa7675cee04f5f24fc54d6acb6e1bc371cb99eb5c9078afce3
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - irrep = irrep.cli:cli
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - pyxtal ==1.1.1
+    - h5py
+    - packaging
+    - python >=${{ python_min }}
+    - numpy
+    - scipy >=1.0
+    - spglib >=2.5.0
+    - lazy-property
+    - click
+    - monty
+    - ruamel.yaml
+    - irreptables >=2.0
+    - fortio
+
+tests:
+  - python:
+      imports:
+        - irrep
+      pip_check: true
+      python_version: ${{ python_min }}
+  - requirements:
+      run:
+        - pip
+        - gpaw
+        - python ${{ python_min }}.*
+    script:
+      - irrep --help
+
+about:
+  summary: A tool to get symmetry proberties of ab-initio wavefunctions, irreduible representations and more.
+  license: GPL-3.0-or-later
+  license_file: LICENSE
+  homepage: https://github.com/stepan-tsirkin/irrep
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
