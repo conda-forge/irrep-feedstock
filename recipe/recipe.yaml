@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: irrep
-  version: "3.2.0"
+  version: 3.3.0
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/irrep-${{ version }}.tar.gz
-  sha256: f80919c756d958aa7675cee04f5f24fc54d6acb6e1bc371cb99eb5c9078afce3
+  sha256: 9a812a27baf20f625d3f261b159e124f307ffecd7b29c12ff4dbf2de80a2f5d1
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
   python:
@@ -39,7 +39,6 @@ requirements:
     - ruamel.yaml
     - irreptables >=2.0
     - fortio
-
 tests:
   - python:
       imports:
@@ -47,7 +46,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}
-        - "*"
+        - '*'
   - requirements:
       run:
         - pip
