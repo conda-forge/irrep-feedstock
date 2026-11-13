@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: irrep
-  version: 3.4.0
+  version: 3.4.1
   python_min: "3.12"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/irrep-${{ version }}.tar.gz
-  sha256: cc1798f2446fb295acc16ec308adc079b5cddc1cc02aabce2f6534d8242ed589
+  sha256: d996d60548274c5f8e309c0c7557b64529d1516b188c390f1fdb591faed86dac
 
 build:
   number: 0
@@ -38,6 +38,7 @@ requirements:
     - monty
     - fortio
     - gpaw
+
 tests:
   - python:
       imports:
