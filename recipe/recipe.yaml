@@ -3,6 +3,7 @@ schema_version: 1
 context:
   name: irrep
   version: 3.4.1
+  python_min: "3.12"
 
 package:
   name: ${{ name|lower }}
@@ -33,11 +34,8 @@ requirements:
     - numpy
     - scipy >=1.0
     - spglib >=2.5.0
-    - lazy-property
     - click
     - monty
-    - ruamel.yaml
-    - irreptables >=2.0
     - fortio
     - gpaw
 
