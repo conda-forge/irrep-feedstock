@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: irrep
-  version: 3.3.0
+  version: 3.4.0
   python_min: "3.12"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/irrep-${{ version }}.tar.gz
-  sha256: 9a812a27baf20f625d3f261b159e124f307ffecd7b29c12ff4dbf2de80a2f5d1
+  sha256: cc1798f2446fb295acc16ec308adc079b5cddc1cc02aabce2f6534d8242ed589
 
 build:
   number: 0
@@ -34,12 +34,10 @@ requirements:
     - numpy
     - scipy >=1.0
     - spglib >=2.5.0
-    - lazy-property
     - click
     - monty
-    - ruamel.yaml
-    - irreptables >=2.0
     - fortio
+    - gpaw
 tests:
   - python:
       imports:
