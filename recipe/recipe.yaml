@@ -39,6 +39,7 @@ requirements:
     - ruamel.yaml
     - irreptables >=2.0
     - fortio
+    - gpaw
 
 tests:
   - python:
