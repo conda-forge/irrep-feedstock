@@ -33,9 +33,13 @@ requirements:
     - numpy
     - scipy >=1.0
     - spglib >=2.5.0
+    - lazy-property
     - click
     - monty
+    - ruamel.yaml
+    - irreptables >=2.0
     - fortio
+
 tests:
   - python:
       imports:
